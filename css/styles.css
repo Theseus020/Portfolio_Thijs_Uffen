@@ -1,0 +1,272 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'Sen', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(214, 214, 214);
+}
+
+header nav {
+    flex-grow: 1;
+    position: sticky;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    flex-grow: 1;
+    min-width: 6em;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    display: block;
+    line-height: 3.5em;
+    text-align: center;
+}
+
+header nav a.active {
+    font-weight: bold;
+    cursor: default;
+}
+
+header nav a:hover:not(.active) {
+    color: lightgray;
+    background-color: gray;
+}
+
+header nav a:focus {
+    text-decoration: underline;
+}
+
+/********/
+/* MAIN */
+/********/
+
+
+main {
+    margin-left: 2em;
+}
+
+main h1 {
+    font-size: 4em;
+    font-family: montserrat;
+    font-weight: 700;
+}
+
+@keyframes title-animation {
+    0% {
+        transform: scale(1);
+        color: black;
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: gray;
+    }
+
+    100% {
+        transform: scale(1);
+        color: black;
+    }
+}
+
+main h1:hover {
+    animation-name: title-animation;
+    animation-duration: 5s;
+    transform-origin: left bottom;
+
+}
+
+main h2 {
+    position: relative;
+    margin-top: -2.5em;
+}
+
+.naamBlokje {
+    text-align: justify;
+}
+
+.naamBlokje h1 {
+    margin-bottom: 1em;
+    flex: 2 0 0%;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-basis: auto;
+    justify-content: space-evenly;
+    padding: 2% 20% 0 20%;
+    height: 100vh;
+}
+
+
+
+.about {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/********/
+/* MAIN PROJECTEN */
+/********/
+
+main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 2em 2em;
+}
+
+main li {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+
+/*** projecten ***/
+
+.projecten {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+    grid-template-areas:
+        "img-1 img-2 img-3"
+        "img-4 img-5 img-6";
+
+}
+
+.image-gallery a {
+    width: 100%;
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.image-gallery a i {
+    color: rgba(255, 255, 255, .6);
+    font-size: 3rem;
+    position: relative;
+    z-index: 100;
+    padding: 1rem 3rem;
+    border: 2px solid rgba(255, 255, 255, .6);
+    border-radius: .4rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image-gallery a::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before {
+    opacity: 1;
+}
+
+.img-1 {
+    grid-area: img-1;
+    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+
+}
+
+.img-2 {
+    grid-area: img-2;
+    background-image: url("/images/sunsnap.jpg");
+
+}
+
+.img-3 {
+    grid-area: img-3;
+    background-image: url("/images/oba.jpg");
+
+}
+
+.img-4 {
+    grid-area: img-4;
+    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+
+}
+
+.img-5 {
+    grid-area: img-5;
+    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+
+}
+
+.img-6 {
+    grid-area: img-6;
+    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+
+}
+
+@media screen and (max-width: 800px) {
+    .image-gallery {
+        grid-template-areas:
+            "img-1 img-1 img-1"
+            "img-2 img-2 img-2"
+            "img-3 img-3 img-3"
+            "img-4 img-4 img-4"
+            "img-5 img-5 img-5"
+            "img-6 img-6 img-6"
+
+    }
+
+}
