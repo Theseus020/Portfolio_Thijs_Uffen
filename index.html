@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Thijs Uffen</title>
+    <title>Thijs Uffen | CMD Student </title>
     <meta charset="utf-8">
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans" rel="stylesheet">
@@ -28,16 +28,24 @@
 
     <main>
         <section class="intro">
-            <div class="naamBlokje">
+            <div class="naam-blokje">
                 <h1>Thijs Uffen</h1>
                 <h2> UI & UX Designer</h2>
                 <p>Senior Student Communication and Multimedia Design student<br> at Amsterdam University of Applied Sciences.</p>
             </div>
+            <div class="profielfoto">
+                <img src="images/cirkel.png" alt="Foto van Thijs Uffen">
+            </div>
+        </section>
 
-            <img src="images/cirkel.png" alt="Foto van Thijs Uffen" class="profielfoto">
+        <section class="about">
+            <h2>About me</h2>
+            <p>My name is Thijs Uffen, 25 years old and studying Communication & Multimedia Design at Amsterdam University of Applied Sciences. I am an UX & UI Designer. I enjoy making tech and web accessible and aesthetic.</p>
+
         </section>
 
         <section class="projecten">
+            <h2>My work</h2>
             <div class="container">
                 <div class="image-gallery">
                     <a href="images/Stream%20Orb%20portfolio.jpg" class="img-1">
@@ -62,10 +70,42 @@
             </div>
         </section>
 
+        <section class="contact">
+            <h2> Contact</h2>
+
+            <form class="formulier">
+                <p>
+                    <label for="first-name">Voornaam</label>
+                    <input type="text" id="voor-naam" placeholder="Uw voornaam">
+                </p>
+                <p>
+                    <label for="last-name">Achternaam</label>
+                    <input type="text" id="last-name" placeholder="Uw achternaam">
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email here">
+                </p>
+                <p>
+                    <label for="phone">Telefoonnummer</label>
+                    <input type="tel" id="phone" placeholder="Uw telefoonnummer">
+                </p>
+                <p>
+                    <label for="message">Vraag of bericht</label>
+                    <textarea rows="6" id="message" placeholder="Typ hier uw vraag of bericht"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Versturen!</button>
+                </p>
+            </form>
+
+        </section>
+
     </main>
 
     <footer>
-        <p>© Copyright Thijs Uffen</p>
+        <p class="footer-naam">Thijs Uffen</p>
+        <p class="footer-copyright">© 2021 Copyright Thijs Uffen</p>
     </footer>
 
 </body></html>

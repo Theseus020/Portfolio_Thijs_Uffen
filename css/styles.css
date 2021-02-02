@@ -5,6 +5,10 @@
     font-family: 'Sen', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: rgb(214, 214, 214);
@@ -12,7 +16,7 @@ body {
 
 header nav {
     flex-grow: 1;
-    position: sticky;
+    position: static;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -64,14 +68,17 @@ header nav a:focus {
     text-decoration: underline;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 /********/
 /* MAIN */
 /********/
 
 
-main {
-    margin-left: 2em;
-}
 
 main h1 {
     font-size: 4em;
@@ -105,43 +112,61 @@ main h1:hover {
 
 main h2 {
     position: relative;
-    margin-top: -2.5em;
+    margin-top: -2em;
 }
 
-.naamBlokje {
+.naam-blokje {
     text-align: justify;
     display: inline-block;
 }
 
-.naamBlokje h1 {
+.naam-blokje h1 {
     margin-bottom: 1em;
-    flex: 2 0 0%;
 }
 
 .intro {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-basis: auto;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.profielfoto img {
+    width: 70%;
+    display: inline-block;
+}
+
+/********/
+/* About sectie */
+/********/
+
+
+.about {
+    display: flex;
+    background-color: white;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     flex-basis: auto;
-    justify-content: space-evenly;
-    padding: 5% 10% 0 5%;
-    height: 100vh;
-    width: 100vw;
-}
-
-.profielfoto img {
-    width: 60%;
-    display: inline-block;
-}
-
-
-.about {
+    justify-content: center;
     height: 100vh;
     width: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
+}
+
+.about h2 {
+    position: relative;
+    font-size: 3em;
+}
+
+.about p {
+    position: relative;
+    text-align: center;
+    max-width: 50em;
+    margin: 4em;
 }
 
 /********/
@@ -163,8 +188,17 @@ main li {
 
 /*** projecten ***/
 
+.projecten h2 {
+    align-items: center;
+    position: relative;
+    top: 1em;
+    margin-bottom: 1.5em;
+    font-size: 3em;
+    text-align: center;
+}
+
 .projecten {
-    display: flex;
+    background-color: rgb(214, 214, 214);
 }
 
 .container {
@@ -229,7 +263,7 @@ main li {
 
 .img-1 {
     grid-area: img-1;
-    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+    background-image: url("/images/streamorb.jpg");
 
 }
 
@@ -247,23 +281,104 @@ main li {
 
 .img-4 {
     grid-area: img-4;
-    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+    background-image: url("/images/dancerally.jpg");
 
 }
 
 .img-5 {
     grid-area: img-5;
-    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+    background-image: url("/images/msd.jpg");
 
 }
 
 .img-6 {
     grid-area: img-6;
-    background-image: url("/images/Stream%20Orb%20portfolio.jpg");
+    background-image: url("/images/plog.jpg");
 
 }
 
-@media screen and (max-width: 800px) {
+/* Contact */
+
+.contact {
+    position: relative;
+    top: 5em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-basis: auto;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.contact h2 {
+    position: relative;
+    top: -1em;
+    font-size: 3em;
+}
+
+.contact form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.contact form label {
+    display: block;
+}
+
+.contact form input {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    
+}
+
+.contact form p {
+    margin: 0;
+}
+
+
+.flex-outer li button {
+ margin-top: 1em;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+/* Footer */
+
+footer {
+    background-color: black;
+    padding: .5em;
+    margin-top: 5em;
+    width: 100%;
+}
+
+.footer-naam {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: white;
+    font-weight: 100;
+
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 1000px) {
     .image-gallery {
         grid-template-areas:
             "img-1 img-1 img-1"
@@ -272,7 +387,27 @@ main li {
             "img-4 img-4 img-4"
             "img-5 img-5 img-5"
             "img-6 img-6 img-6"
-
     }
 
-}
+    @media screen and (max-width: 400px) {
+        .intro {
+            width: 80%;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 400px) {
+
+            .intro h1,
+            .intro h2,
+            .intro p {
+                text-align: center;
+                display: block;
+            }
+
+
+
+
+            .profielfoto {
+                bottom: 10%;
+            }
+        }
